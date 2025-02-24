@@ -88,17 +88,22 @@ def product_info(product):
                         data.append([product, gender, season, brand_name, image1, image2_link, product_name, image_link])
                         count += 1
 
+        driver.quit()
         return data
     
     except Exception as e:
         print("오류 발생:", e)
+        driver.quit()
 
 products = ["상의", "바지"] # 수집할 데이터
+all_data = []  # 모든 데이터를 모을 리스트
 
 for product in products:
-    product_info(product)
+    data = product_info(product)
+    all_data.extend(data)  # 각 상품 유형 데이터를 모음
 
-    with open(f"info_{product}", mode='w', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file)
-        writer.writerow(['상품 링크', '성별', '시즌', '브랜드명', '대표 이미지', '모델 이미지', '상품명', '상품 이미지 링크'])
-        writer.writerows(data)
+# CSV로 저장
+with open('product_info.csv', mode='w', newline='', encoding='utf-8') as file:
+    writer = csv.writer(file)
+    writer.writerow(['상품 링크', '성별', '시즌', '브랜드명', '대표 이미지', '모델 이미지', '상품명', '상품 이미지 링크'])
+    writer.writerows(all_data)
