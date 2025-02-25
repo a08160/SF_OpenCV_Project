@@ -1,4 +1,6 @@
 # 원본 이미지에서 사람 형체만 따서 저장
+# U2-net 활용
+
 from rembg import remove
 from PIL import Image
 

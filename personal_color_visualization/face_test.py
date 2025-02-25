@@ -1,4 +1,5 @@
 # 누끼 이미지에서 옷과 얼굴을 분리
+# dlib 활용 예정정
 
 input_image = "Noukky_image/1.png"
 face_dir = "face_image/"
