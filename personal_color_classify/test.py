@@ -47,6 +47,7 @@ for n_splits in kf_splits_range:
         # 의사결정트리 모델 정의 (depth를 3으로 설정)
         dt_model = DecisionTreeClassifier(random_state=42, max_depth=3)
         
+        # 다중 특성을 고려한 커스텀 분할 방법 적용 (특성들의 조합 사용)
         # 각 'cloth_L_lab', 'cloth_a_lab', 'cloth_b_lab'에 대해 모델 학습 및 예측
         for col in y.columns:
             dt_model.fit(X_train, y_train[col])
