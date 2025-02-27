@@ -143,6 +143,7 @@ if __name__ == "__main__":
 
         except Exception as e:
             print(f"[ERROR] Failed to process {image_path}: {e}")
+            results.append({'image_id': i, 'face_L_lab': 0, 'face_a_lab': 0, 'face_b_lab': 0, 'skin_bgr':[0,0,0]})
             continue  # 오류가 나면 다음 이미지로 넘어감
 
     # 결과를 DataFrame으로 변환
