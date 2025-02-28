@@ -10,11 +10,7 @@ class ItemRecommendation:
         self.db = db
         self.recommendations = {
             '상의': [],
-            '아우터': [],
-            '원피스': [],
-            '스커트': [],
-            '바지': [],
-            '패션소품': []
+            '하의': [],
         }
 
     def recommend_items_by_category(self, num_recommendations=5):

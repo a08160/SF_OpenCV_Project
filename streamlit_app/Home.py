@@ -3,7 +3,7 @@ import base64
 
 def main():
     # 페이지 설정
-    st.set_page_config(layout="wide", page_title="AURA Fashion Recommendation")
+    st.set_page_config(layout="wide", page_title="퍼스널 컬러 자가진단 및 스타일링 추천 서비스스")
     
     # Streamlit 기본 요소 숨기기
     hide_streamlit_style = """
@@ -15,14 +15,6 @@ def main():
     """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-    # 배경 이미지 설정
-    background_image_path = "homepgim.jpg"
-    def get_base64_of_bin_file(bin_file):
-        with open(bin_file, "rb") as f:
-            data = f.read()
-        return base64.b64encode(data).decode()
-    background_image_base64 = get_base64_of_bin_file(background_image_path)
-
     # 모던한 디자인 CSS
     css_code = f"""
     <style>
@@ -33,20 +25,6 @@ def main():
         margin: 0;
         padding: 0;
         font-family: 'Pretendard', sans-serif;
-    }}
-
-    /* 배경 설정 */
-    .stApp {{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-                    url("data:image/jpg;base64,{background_image_base64}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
     }}
 
     /* 텍스트 스타일링 */

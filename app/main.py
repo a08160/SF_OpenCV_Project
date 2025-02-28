@@ -4,7 +4,7 @@ import shutil
 import os
 
 
-from personal_color_classifier import PersonalColorClassifier  # 퍼스널 컬러 분류기
+from app.personal_color import Color_extract  # 퍼스널 컬러 분류기
 from sql_app.database import SessionLocal, engine, Base
 from sql_app import models
 from item_recommendation import ItemRecommendation
@@ -14,8 +14,8 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-# PersonalColorClassifier 인스턴스 생성
-classifier = PersonalColorClassifier(r'/Users/eunseo/Downloads/AURA/api/shape_predictor_68_face_landmarks.dat')
+# Color_extract 인스턴스 생성
+classifier = Color_extract(r'/Users/eunseo/Downloads/AURA/api/shape_predictor_68_face_landmarks.dat')
 
 
 # DB 세션 가져오기
@@ -31,7 +31,7 @@ def get_db():
 def predict_personal_color(file: UploadFile = File(...)):
     """
     1) 업로드된 이미지를 서버 임시 파일로 저장
-    2) PersonalColorClassifier로 퍼스널 컬러 예측
+    2) Color_extract로 퍼스널 컬러 예측
     3) 결과 반환
     """
     # 1) 업로드된 파일을 임시 경로로 저장
