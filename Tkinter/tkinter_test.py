@@ -4,10 +4,11 @@ import cv2
 import pandas as pd
 import sys
 import numpy as np
+from rembg import remove
+from PIL import Image
 
 sys.path.append('/personal_color_visualization') # Noukky.py face_color.py import 
 
-from Noukky import remove_background
 from face_color import Color_extract
 
 mode = int(input("""기능1. 사진 업로드
@@ -15,9 +16,9 @@ mode = int(input("""기능1. 사진 업로드
                  기능을 선택하세요(숫자만 입력):
                  """))
 
-def image_upload(mode):
+def image_upload(mode_class):
     # 사진 업로드
-    if mode == 1:
+    if mode_class == 1:
         img = cv2.imread("test_image.png")
         return img
     
@@ -47,3 +48,10 @@ def image_upload(mode):
         cap.release()
         cv2.destroyAllWindows()
 
+image = image_upload(mode)
+
+# 배경 제거
+rembg_img = remove(image)
+    
+# 저장
+out.save(output_file)
