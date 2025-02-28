@@ -7,7 +7,7 @@ class Color_extract:
     def __init__(self):
         # 얼굴 인식 모델 초기화 (dlib의 68 포인트 랜드마크 모델)
         self.detector = dlib.get_frontal_face_detector()
-        self.predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+        self.predictor = dlib.shape_predictor("C:/Users/SAMSUNG/Documents/code/OpenCV/Project/app/shape_predictor_68_face_landmarks.dat")
 
     def get_facial_landmarks(self, image):
         # 얼굴 랜드마크 추출

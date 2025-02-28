@@ -5,25 +5,26 @@ from sqlalchemy.ext.declarative import declarative_base
 from dotenv import load_dotenv
 import os
 
+# 환경 변수 로드
 load_dotenv()
+
+# 환경 변수 가져오기
+
 user = os.getenv("DB_USER")     
 passwd = os.getenv("DB_PASSWD") 
 host = os.getenv("DB_HOST")     
-port = os.getenv("DB_PORT","3006")     
-db = os.getenv("DB_NAME")       
+port = os.getenv("DB_PORT", "3306")     
+db = os.getenv("DB_NAME")      
 
-# 1. SQLAlchemy 사용할 DB URL 생성하기
-# mysql db에 연결
-DB_URL = f"mysql+pymysql://{user}:{passwd}@{host}:{port}/{db}?charset=utf8mb4"
-# Postgresql : f'postgresql://{user}:{passwd}@{host}:{port}/{db}'
-# SQLite : f'sqlite://{/dbname.db}'
+# SQLAlchemy DB URL 생성
+# DB_URL = f"mysql+pymysql://{user}:{passwd}@{host}:{port}/{db}"
+DB_URL = "mysql+pymysql://root:leedonggun6932*1@localhost:3306/test_db"
 
-
-# 2. 첫 번째 단계는 SQLAlchemy "엔진"을 만드는 것입니다.
+# 엔진 생성
 engine = create_engine(DB_URL, echo=True)
 
-# 3. DB 세션 생성하기
+# DB 세션 생성
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# 4. Base class 생성
+# Base 클래스 생성
 Base = declarative_base()

@@ -22,7 +22,7 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 # Color_extract 인스턴스 생성
-classifier = Color_extract(r'/Users/eunseo/Downloads/AURA/api/shape_predictor_68_face_landmarks.dat')
+classifier = Color_extract()
 
 
 # DB 세션 가져오기
