@@ -9,7 +9,7 @@ load_dotenv()
 user = os.getenv("DB_USER")     
 passwd = os.getenv("DB_PASSWD") 
 host = os.getenv("DB_HOST")     
-port = os.getenv("DB_PORT")     
+port = os.getenv("DB_PORT","3006")     
 db = os.getenv("DB_NAME")       
 
 # 1. SQLAlchemy 사용할 DB URL 생성하기

@@ -5,9 +5,9 @@ import os
 
 
 from app.personal_color import Color_extract  # 퍼스널 컬러 분류기
-from sql_app.database import SessionLocal, engine, Base
-from sql_app import models
-from item_recommendation import ItemRecommendation
+from app.sql_app.database import SessionLocal, engine, Base
+from app.sql_app import models
+from app.item_recommendation import ItemRecommendation
 import sys
 import os
 from pathlib import Path
