@@ -8,6 +8,13 @@ from app.personal_color import Color_extract  # 퍼스널 컬러 분류기
 from sql_app.database import SessionLocal, engine, Base
 from sql_app import models
 from item_recommendation import ItemRecommendation
+import sys
+import os
+from pathlib import Path
+
+# 현재 디렉토리에서 sql_app 경로를 인식하도록 추가
+sys.path.append(str(Path(__file__).resolve().parent / "sql_app"))
+
 
 # DB 초기화
 Base.metadata.create_all(bind=engine)
