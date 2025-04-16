@@ -240,7 +240,7 @@ def main():
                     분석 결과
                 </h2>
                 <h3 style='text-align:center; color: #000000; font-size: 1.8rem; margin-bottom: 1.5rem;'>
-                    TAVY의 퍼스널 컬러는 {info['title']} 입니다
+                    당신의 퍼스널 컬러는 {info['title']} 입니다
                 </h3>
                 <div style='text-align:center; font-size: 1.1rem; background-color: #f8f9fa; padding: 1.5rem; border-radius: 10px;'>
                     <p style='font-weight: 700; margin-bottom: 1rem; color: #000000;'>대표 연예인과 이미지</p>
@@ -271,7 +271,7 @@ def main():
                 st.markdown("<div class='image-container'>", unsafe_allow_html=True)
                 image = Image.open(st.session_state.uploaded_image)
                 image = image.resize((300, 450))  # 크기를 300x450으로 줄임
-                st.image(image, caption="업로드된 이미지", use_container_width=True)
+                st.image(image, caption="업로드된 이미지", use_column_width=True)
                 st.markdown("</div>", unsafe_allow_html=True)
 
         with col2:
@@ -291,7 +291,7 @@ def main():
                                 image_path = os.path.join(images_dir, image_file)
                                 color_image = Image.open(image_path)
                                 color_image = color_image.resize((150, 225))  # 크기를 150x225로 줄임
-                                st.image(color_image, use_container_width=True)
+                                st.image(color_image, use_column_width=True)
                         st.markdown("</div>", unsafe_allow_html=True)
             except Exception as e:
                 st.error("😢 추천 이미지를 불러오는데 실패했습니다.")

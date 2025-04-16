@@ -94,7 +94,7 @@ def main():
         )
         
         if uploaded_file:
-            st.image(uploaded_file, caption="업로드된 이미지", use_container_width=True)
+            st.image(uploaded_file, caption="업로드된 이미지", use_column_width=True)
         
         if st.button("분석 시작하기"):
             if uploaded_file is None:
@@ -132,7 +132,7 @@ def main():
                                     item_cols = st.columns(len(items))
                                     for idx, item in enumerate(items):
                                         with item_cols[idx]:
-                                            st.image(item["image_url"], use_container_width=True)
+                                            st.image(item["image_url"], use_column_width=True)
                                             st.markdown(f"""
                                             **{item["item_name"]}**  
                                             {item["brand_name"]}

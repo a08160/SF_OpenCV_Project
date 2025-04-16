@@ -126,3 +126,10 @@ def save_recommendations_to_db(db: Session, json_data: dict):
             db.add(db_item)
     db.commit()
 
+@app.get("/")
+def read_root():
+    return {"message": "FastAPI server is running!"}
+
+@app.get("/favicon.ico")
+def favicon():
+    return {"message": "No favicon available."}
