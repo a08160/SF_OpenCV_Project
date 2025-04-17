@@ -160,7 +160,7 @@ def main():
                 퍼스널 컬러 진단 시스템
             </h1>
             <p style='text-align:center; color: #666; font-size: 1.1rem;'>
-                AURA가 분석하는 당신만의 퍼스널 컬러
+                당신만의 퍼스널 컬러 분석
             </p>
         </div>
     """, unsafe_allow_html=True)
@@ -173,7 +173,7 @@ def main():
     if uploaded_file:
         files = {'file': uploaded_file}
         try:
-            response = requests.post('http://localhost:8000/predict', files=files)
+            response = requests.post('http://localhost:8501/Personal_Color', files=files)
             if response.status_code == 200:
                 result = response.json()
                 if result['success']:
