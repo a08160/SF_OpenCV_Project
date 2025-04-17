@@ -60,6 +60,7 @@
 - **Decision Tree 분류기** 사용, `KFold` 교차검증으로 신뢰도 향상  
 - 최종 분류 기준:
 
+'''python
 if face_b_Lab >= 141.5:
     if face_L_Lab >= 150.5:
         return "Spring Warm"
@@ -70,7 +71,8 @@ else:
         return "Summer Cool"
     else:
         return "Winter Cool"
-          
+ '''
+ 
 - **최종 정확도: 65.39%**
 
 ### 3️⃣ 퍼스널 컬러 기반 의류 색상 추천
