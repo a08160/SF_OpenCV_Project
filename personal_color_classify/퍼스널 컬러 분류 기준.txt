@@ -1,17 +1,25 @@
-# LAB 색상 값 기준
+# LAB 색상 값 기준	
 
 얼굴에 대한 최종 기준	
-face_b_lab < 141.5: cool
-	       >= : warm
-face_L_lab >= 150.5:  Spring Warm
-		<: Autumn Warm
-face_L_lab >= 138.5: Summer Cool
-		< : Winter Cool
+if face_b_Lab >= 141.5:
+    if face_L_Lab >= 150.5:
+        return "Spring Warm"
+    else:
+        return "Autumn Warm"
+else:
+    if face_L_Lab >= 138.5:
+        return "Summer Cool"
+    else:
+        return "Winter Cool"
 
 옷에 대한 최종 기준	
-cloth_b_lab < 131.5: Cool 
-	       >= : Warm
-cloth_L_lab >= 136.5:  Summer Cool
-		<: Winter Cool
-cloth_L_lab >= 142.5: Spring Warm
-		< : Autumn Warm
+if cloth_b_Lab >= 131.5:
+    if cloth_L_Lab >= 142.5:
+        return "Spring Warm"
+    else:
+        return "Autumn Warm"
+else:
+    if cloth_L_Lab >= 136.5:
+        return "Summer Cool"
+    else:
+        return "Winter Cool" 
