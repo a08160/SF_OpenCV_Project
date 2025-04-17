@@ -60,7 +60,7 @@
 - **Decision Tree 분류기** 사용, `KFold` 교차검증으로 신뢰도 향상  
 - 최종 분류 기준:
 
-'''python
+'''
 if face_b_Lab >= 141.5:
     if face_L_Lab >= 150.5:
         return "Spring Warm"
@@ -82,7 +82,7 @@ else:
 - 최종적으로 크롤링된 무신사 상품과 매칭하여 **퍼스널 컬러 기반 상품 추천 시스템 구축**
 - 최종 분류 기준:
 
-'''python
+'''
 if face_b_Lab >= 131.5:
     if face_L_Lab >= 142.5:
         return "Spring Warm"
